@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+/*   Inicio del Header */
+header{
+    position: fixed;
+    top:  0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    box-shadow: 0 4px 25px -22px black; /*el 0 significa que  la sombra no tendra ni nungun ancho ni movimiento de derecha a izquierda para la sombra*/
+    z-index: 2; /*para asegurarnos que este por encima de todo*/
+}
+
+.header-content{
+    max-width: 1200px;
+    margin: auto;
+    display: flex; /*para colocar uno de lado del otro*/
+    justify-content: space-between; /* separa el contenido  luisvmpcl  con el menu*/
+}
+
+.logo{
+    height: 80px;
+    display: flex; /* trabajan juntos   justify-content: center; align-items: center; */
+    justify-content: center;
+    align-items: center;
+}
+
+.logo h1 b{
+    color : #46a2fd;
+}
+
+.menu{
+    height: 80px;
+
+}
+
+.menu nav{
+    height: 100%; /* */
+}
+
+.menu nav ul {
+    height: 100%;
+    display: flex;
+    list-style: none; /*para eliminar las viñetas*/
+}
+
+.menu nav ul li{
+    height: 100%;
+    margin: 0px 20px; /* para el espaciado entre palabras*/
+    display: flex; /* trabajan juntos   justify-content: center; align-items: center; */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.menu-selected:before{
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: #46a2fd;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.menu nav ul li a{
+    color: #777777;    
+    font-size: 18px; /*para el tamaño de la letra*/
+    transition: color 300ms;
+}
+
+.menu nav ul li a:hover{
+    color: #46a2fd
+}
+
+.menu .text-menu-selected{
+    color: #46a2fd;
+}
+
+.menu nav ul li a i{
+    display: none;  /* con esto ocultamos los iconos cuando esta en un tamaño normal*/
+}
+
+#icon-menu{  /* menu haburguesa */
+    width: 50px;
+    height: 50px;
+    position: absolute; /* se pondra en la parte superior derecha  */
+    right: 20px;
+    top: 16px;
+    padding: 10px; /* con esta propiedad el icono queda al centro*/
+    font-size: 20px;
+    background: #eeeeeefa;
+    border-radius: 100%;  /* para formar un redondo completo */
+    color:#787878;
+    /**display: flex; /* para que el icono del menu ingrese al circulo */
+    display: none;
+    justify-content: center; /* estas dos propiedades trabajan con el display-flex  */
+    align-items: center;  /* estas dos propiedades trabajan con el display-flex  */
+    cursor: pointer;
+} 
+
+#icon-menu:hover{
+    opacity: 0.8;
+}
+
+
+
+
+/*  Fin del Header */
+
+/* la portada*/ 
+
+.container-cover{
+    width: 100%;
+    height: 500px;
+    position: relative;  /*para no desmaquetar la pagina*/
+    margin-top: 80px; /*para que lo empuje hacia abajo*/
+    background-image: url(../img/img1.jpg);
+    background-position: center; /*para posicionar la imagen*/
+    background-size: cover; /* para cubra todo al momento de poner mas grande o maximizar*/
+    background-repeat: no-repeat; /*par que la imagen no se repita*/
+}
+
+/*para crear la capa es decir el transparente crearemos una pseudoclase*/
+.container-cover:before{ /*esta es la pseudoclase*/
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(38, 172, 255,0.8); /*esta parte es para la capa*/
+    position: absolute; /*esta parte es para la capa*/
+    top: 0; /*esta parte es para la capa*/
+    left: 0; /*esta parte es para la capa*/
+}
+/*  */
+
+.container-info-cover{
+    max-width: 800px;
+    height: 500px;
+    margin: auto;
+    text-align: center; 
+    display: flex; /*Coloca el contenido de lado del otro*/
+    flex-direction: column; /*Coloca de forma vertical*/
+    justify-content: center;  /*Centra el contenido arriba abajo derecha e izquierda*/    
+    align-items: center;
+    position: relative; /*para que el titulo aparezca por encima de la imagen*/
+    z-index: 1;  /*para que el titulo aparezca por encima de la imagen*/
+}
+
+
+.container-info-cover h1{
+    font-size: 60px; /*para el tamaño de lentra*/
+    font-weight: 500; /*traja con las tipografias*/
+    color: #fff;
+    margin-bottom: 20px; /*para el espaciado*/
+}
+
+.container-info-cover p{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+}  /* fin de la portada*/
+
+/*Contenido del Articulo*/
+
+.container-content{
+    width: 1200px;
+    margin: auto;
+    margin-top: 40px;
+    display: flex; /* con esto se colocara los aside en la parte derecha es decir uno del lado del otro */
+    justify-content: center;
+}
+
+article{
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 40px; /* par ael espaciado */
+    box-shadow: -10px 0 20px -30px black;
+    border-radius: 6px;
+    position: relative; /* para que lo relacione con la pagina */
+    overflow: hidden; /*para que recorte la linea*/
+    
+}
+
+article:before{
+    content: '';
+    width: 100%;
+    height: 6px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #46a2fd;
+}
+
+article h1{
+    margin-top: 20px;
+    font-weight: 500; /* para el ancho */
+    font-size: 40px;
+}
+
+article p{
+    margin-top: 20px; /* para la separacion del parrafo*/
+    font-size: 18px;  /* para el tamaño de la letra */
+    color: #3c3c3c;
+}
+
+article img{
+    width: 100%;
+    margin-top: 20px; /* para que baje  */
+}
+
+/* Aside de los Artículos */
+
+.container-aside aside{
+    width: 320px;
+    border-radius: 6px;
+    box-shadow: 0 0 20px -20px black;
+    overflow: hidden; /* para recortar la imagen  */
+    margin-left: 40px;  /* PARA SEPARAR LOS ARTICULOS DEL ASIDE */
+    margin-bottom: 40px;  /* para separar,  y guarda la misma posicion del lado ; a diferencia que el  margin-top baja pero no lo guarda la misma posicion */
+    padding-bottom: 20px;  /*  */
+}
+
+.container-aside aside img{
+    width: 100%;
+}
+
+.container-aside aside h2,
+.container-aside aside p{
+    margin-top: 20px;
+    padding: 0px 20px;
+}
+
+.container-aside aside button{
+    margin-top: 20px;
+    margin-left: 20px;
+    padding:  10px 50px;
+    font-size: 16px;
+    background: #46a2fd;
+    border: none; /* para eliminar el border */
+    color:#fff;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.container-aside aside button:hover{  /* cuando pase el mouse por encima se vea la opacidad */
+    opacity: 0.9;
+
+}
+
+/* Footer*/s
+
+.container-footer{
+    width: 100%;
+    padding: 40px 0;
+    background:#f7f7f7;
+    margin-top: 40px;
+}
+
+.container-footer footer{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.container-footer footer .logo-footer{
+    text-align: center;
+}
+
+.container-footer footer .logo-footer img{
+    width: 100px;
+    border-radius: 100%;
+}
+
+.container-footer footer .redes-footer{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.container-footer footer .redes-footer .icon-redes-footer{
+    font-size: 20px;
+    margin: 20px;
+    background: #efefef;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 100%;
+    color: #a2a2a2;
+}
+
+
+footer .redes-footer .fa-facebook-f:hover{
+    background: #41579A;
+    color: #fff;
+}
+
+footer .redes-footer .fa-google-plus-g:hover{
+    background: #DE4C34;
+    color: #fff;
+}
+
+
+footer .redes-footer .fa-instagram:hover{
+    background: linear-gradient(to top right, #FCDE30, #E9712A, #D2313B, #AE4198, #7540A1, #5443A8);
+    color: #fff;
+}
+
+.container-footer footer hr{
+    margin-top: 20px;
+    border: none;
+    height: 2px;
+    background: #c0c0c07a
+}
+
+.container-footer h4{
+    text-align: center;
+    margin-top: 40px;
+    color:#8e8e8e;
+    font-weight: 500;
+}
+
+
+/* para la parte Response*/
+
+@media screen and (max-width: 1220px){
+    .header-content,
+    .container-content,
+    .container-footer footer{ 
+        max-width: 1000px;
+        padding: 0 20px;
+    }
+}
+
+
+@media screen and (max-width: 1020px){
+    .container-content{
+        width: 100%;
+        flex-direction: column;
+    }
+    article{
+        box-shadow: 0 0 0 0; /* par eliminar la sombra */
+    }
+    .container-aside{
+        display: flex; /* para poner el aside uno del lado del otro */
+        justify-content: center;  /* para que esten centrados los asides*/
+    }
+
+    .container-aside aside{
+        max-width: 300px;
+        margin: 10px;
+    }
+    
+}
+
+
+@media screen and (max-width: 800px){
+
+    body{
+        overflow-x: hidden;  /* para ocultar el scroll de abajo */
+    }
+
+    .container-all{
+        transition: all 300ms;
+        transition: all 300ms cubic-bezier(1,0,0,1); /* cubic-bezier  para controlar el delay de la transision */
+    }
+    .move-container-all{    
+        transform: translateX(300px); /* para que se mueve el contenido del menu al lado*/
+    }
+    .menu{  /* clase menu original */
+        /* width: 0px; */ /*con esta medida desaparece el menu claro a esta medida*/
+       /* width: 300px; */  /* para habilitarlo los iconos cuando llegue a 800px*/
+       width: 0px;
+        height: 100vh;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        background: #fff;
+        overflow: hidden;
+        transform: translateX(-3500px); /* para que se mantenga oculto*/
+        box-shadow: 10px 0 20px -25px black;
+        transition: all 300ms cubic-bezier(1,0,0,1); /* cubic-bezier  para controlar el delay de la transision */
+    }
+
+    .show-lateral{
+        width: 300px; /* esta clase menu sera imaginaria que va trabajar con javascript*/
+        transform: translateX(0px);
+    }
+
+    .menu nav ul{
+        flex-direction: column; /* para que se coloque el menu uno debajo del otro*/
+    }
+
+    .menu nav ul li{
+        max-width: 200px; /* para evitar el espaciado del menu */
+        height: 50px;  /* par evitar el espaciado del menu */
+        justify-content: flex-start; /* para que el icono se coloque del lado del texto en este caso del menu*/
+    }
+
+    .menu-selected:before{
+        width: 0; /* para que la linea se oculte*/
+    }
+
+    .menu nav ul li a{
+        margin-top: 40px;
+        color: #858585;  
+    }
+
+    .menu nav ul li a i{
+        width: 20px; /*  para los iconos ya que los iconos estan en la etiqueta i */
+        display: inline-block;
+        margin-right: 10px; /* para que tenga un espaciado */
+        color: #46a2fd;
+
+    }
+
+    #icon-menu{
+        display: flex; /* para que se muestre el  icono del menu y centrado, claro cuando llegue al 800px*/
+    }
+
+    .container-aside{
+        flex-wrap: wrap; /* para que cuando llegue  800px baje el aside uno debajo del otro */
+
+    }
+    
+}
